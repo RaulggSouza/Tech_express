@@ -9,7 +9,8 @@ const Lista = (props) => {
                 <div key={index}>
                     {/* <img src=""/> */}
                     <strong>{objeto.nome}</strong><br/>
-                    <strong>{objeto.preco}</strong> 
+                    <strong>{objeto.preco}</strong><br/>
+                    <hr/>
                 </div>
             ))}
         </div>

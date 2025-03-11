@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import Formulario from "./componentes/Formulario/Formulario";
 import Banner from "./componentes/Banner/Banner";
-import Lista from "./componentes/Lista/Lista";
+import Secao from "./componentes/Secao/Secao";
 
 function App() {
   const [produtos, setProdutos] = useState([]);
+  const secoes = ["Computadores", "Acessórios", "Impressoras", "Games", "Gadgets"];
 
   const adicionaProd = (prod) => {
     const listaNova = produtos.slice();
@@ -16,7 +17,7 @@ function App() {
     <div>
       <Banner/>
       <Formulario aoProdCadastrado={prod => adicionaProd(prod)}/>
-      <Lista objetos={produtos}/>
+      {secoes.map(secao => <Secao key={secao} texto={secao}/>)}
     </div>
   );
 }
