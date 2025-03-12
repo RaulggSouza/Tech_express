@@ -5,7 +5,6 @@ import ListaSuspensa from "../ListaSuspensa/ListaSuspensa";
 import Botao from "../Botao/Botao";
 
 const Formulario = (props) => {
-  const secoes = ["Computadores", "Acessórios", "Impressoras", "Games", "Gadgets"];
   const marcas = ["HP", "Dell", "Positivo", "Asus", "Genérico"];
   
   const [secao, setSecao] = useState("Computadores");
@@ -29,10 +28,10 @@ const Formulario = (props) => {
     <section className="formulario">
       <form onSubmit={aoSalvar}>
         <h2>Dados do Produto</h2>
-        <ListaSuspensa label="Seção" itens={secoes} aoAlterado={valor => setSecao(valor)}/>
+        <ListaSuspensa label="Seção" itens={props.secoes} aoAlterado={valor => setSecao(valor)}/>
         <ListaSuspensa label="Marca" itens={marcas} aoAlterado={valor => setMarca(valor)}/>
-        <CampoTexto label="Nome" placeholder="Digite o nome" aoAlterado={valor => setNome(valor)}/>
-        <CampoTexto label="Preco" placeholder="Digite o preço" aoAlterado={valor => setPreco(valor)}/>
+        <CampoTexto type="text" label="Nome" placeholder="Digite o nome" aoAlterado={valor => setNome(valor)}/>
+        <CampoTexto type="number" label="Preco" placeholder="Digite o preço" aoAlterado={valor => setPreco(valor)}/>
         <Botao>Inserir Produto</Botao>
       </form>
     </section>

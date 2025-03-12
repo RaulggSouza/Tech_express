@@ -16,8 +16,8 @@ function App() {
   return (
     <div>
       <Banner/>
-      <Formulario aoProdCadastrado={prod => adicionaProd(prod)}/>
-      {secoes.map(secao => <Secao key={secao} texto={secao}/>)}
+      <Formulario secoes={secoes} aoProdCadastrado={prod => adicionaProd(prod)}/>
+      {secoes.map(secao => <Secao key={secao} texto={secao} produtos={produtos.filter(prod => prod.secao === secao)}/>)}
     </div>
   );
 }
