@@ -7,7 +7,7 @@ const Secao = (props) => {
         (props.produtos.length > 0) ? <section className="secao">
             <h3>{props.texto}</h3>
             <div className="produtos">
-                {props.produtos.map(prod => <Produto key={prod.nome} nome={prod.nome} preco={prod.preco} marca={prod.marca}/>)}
+                {props.produtos.map(prod => <Produto key={prod.nome} nome={prod.nome} preco={prod.preco} marca={prod.marca} estado={prod.estado}/>)}
             </div>
         </section>
         : ''
